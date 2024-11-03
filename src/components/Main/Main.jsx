@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
+import { GlobalContext } from '../../Context/Context'
 const Main = () => {
+
+  // Importing the context from Context.js in here
+
+  const {input,setInput}  = useContext(GlobalContext);
+
+  // Function to change the state of this component when there is some change in the input field
+
+  const changeInput = (event) => 
+  {
+    // setInput(event.target.value);
+    
+    
+      setInput(event.target.value);
+      console.log(event.target.value);
+    
+    
+  }
+
   return (
     <div className="main">
       <div className="nav">
@@ -37,7 +56,7 @@ const Main = () => {
 
         <div className="main-bottom">
           <div className="search-box">
-            <input type="text" placeholder='Enter a Prompt Here' />
+            <input value = {input} onChange = {changeInput} type="text" placeholder='Enter a Prompt Here' />
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
