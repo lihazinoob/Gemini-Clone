@@ -6,7 +6,7 @@ const Main = () => {
 
   // Importing the context from Context.js in here
 
-  const {input,setInput}  = useContext(GlobalContext);
+  const {input,setInput,OnSent}  = useContext(GlobalContext);
 
   // Function to change the state of this component when there is some change in the input field
 
@@ -19,6 +19,11 @@ const Main = () => {
       console.log(event.target.value);
     
     
+  }
+
+  const clickSend = () =>
+  {
+    OnSent();
   }
 
   return (
@@ -60,7 +65,7 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img src={assets.send_icon} alt="" />
+              <img onClick={clickSend} src={assets.send_icon} alt="" />
             </div>
           </div>
           <p className="bottom-info">

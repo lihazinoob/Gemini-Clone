@@ -16,13 +16,15 @@ const GlobalContextProvider = (props) => {
     theke run function ke call korbe */}
     const OnSent = async(userPrompt) => 
     {
-      await run(userPrompt);
+      await run(input);
     };
+
 
     
     const contextValue ={
       input,
-      setInput
+      setInput,
+      OnSent
     }
 
 
