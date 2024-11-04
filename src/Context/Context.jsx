@@ -39,7 +39,9 @@ const GlobalContextProvider = (props) => {
       recentPrompt,
       setRecentPrompt,
       resultData,
-      setResultData
+      setResultData,
+      loading,
+      setLoading
     }
 
 

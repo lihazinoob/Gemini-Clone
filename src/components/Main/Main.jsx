@@ -5,7 +5,18 @@ import { GlobalContext } from "../../Context/Context";
 const Main = () => {
   // Importing the context from Context.js in here
 
-  const { input, setInput, OnSent, showResult,recentPrompt,setRecentPrompt , resultData , setResultData} = useContext(GlobalContext);
+  const {
+    input,
+    setInput,
+    OnSent,
+    showResult,
+    recentPrompt,
+    setRecentPrompt,
+    resultData,
+    setResultData,
+    loading,
+    setLoading,
+  } = useContext(GlobalContext);
 
   // Function to change the state of this component when there is some change in the input field
 
@@ -65,7 +76,11 @@ const Main = () => {
             </div>
             <div className="result-data">
               <img src={assets.gemini_icon} alt="" />
-              <p>{resultData}</p>
+              {loading ? <div className="loader">
+                <hr />
+                <hr />
+                <hr />
+              </div> : <p>{resultData}</p>}
             </div>
           </div>
         )}
